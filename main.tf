@@ -9,6 +9,12 @@ terraform {
       version = ">=4.45.0"
     }
   }
+  backend "s3" {
+    bucket  = "fjord-terraform-tfstate-bucket"
+    key     = "fjord-terraform.tfstate"
+    region  = "ap-northeast-1"
+    profile = "terraform"
+  }
 }
 
 # ----------------------------
